@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Apasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,8 +15,8 @@ class ApasiController extends Controller
      */
     public function index()
     {
-        $tbl_homepage = DB::table('tbl_homepage')->get();
-        return response()->json($tbl_homepage);
+        $tbl_homepages = DB::table('tbl_homepage')->get();
+        return response()->json($tbl_homepages);
     }
 
     /**
@@ -36,7 +37,11 @@ class ApasiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tbl_homepage = new Apasi;
+        $tbl_homepage->name = $request->name;
+        $tbl_homepage->job = $request->job;
+        $tbl_homepage->save();
+        return response()->json($request);
     }
 
     /**
@@ -81,6 +86,8 @@ class ApasiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // $tbl_homepage = Apasi::findOrFail($id);
+        // $tbl_homepage->delete();
+        // return response()->json($tbl_homepage);
     }
 }

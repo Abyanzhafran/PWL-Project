@@ -21,8 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Route::resource('Apasi', 'ApasiController')->except(['create', 'edit']);
 
-Route::get('/apasi', function () {
-    return 'mamen';
-});
+// Route::get('/apasi', function () {
+//     return 'mamen';
+// });
 
-Route::get('/index', [ApasiController::class, 'index']);
+Route::resource('apasi', ApasiController::class)->except(['create', 'edit']);

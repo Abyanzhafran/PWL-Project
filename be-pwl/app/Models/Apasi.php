@@ -8,7 +8,6 @@ class Apasi extends Model
 {
     // use HasFactory;
 
-    protected $fillable = [
-        'name', 'job',
-    ];
+    protected $table = 'tbl_homepage';
+    protected $fillable = ['name', 'job'];
 }

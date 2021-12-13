@@ -7,6 +7,9 @@ const Homepage = () => {
   const [users, setUsers] = useState([]);
   const [userInsertName, setUserInsertName] = useState('');
   const [userInsertJob, setUserInsertJob] = useState('');
+  const [userUpdateName, setUserUpdateName] = useState('');
+  const [userUpdateJob, setUserUpdateJob] = useState('');
+  const [userIdUpdate, setUserIdUpdate] = useState('');
   const [userDelete, setUserDelete] = useState('');
 
   useEffect(() => {
@@ -28,6 +31,17 @@ const Homepage = () => {
 
   const deleteUser = () => {
     axios.delete(`http://127.0.0.1:8000/api/apasi/${userDelete}`);
+  };
+
+  const updateUser = () => {
+    axios
+      .put(`http://127.0.0.1:8000/api/apasi/${userIdUpdate}`, {
+        name: userUpdateName,
+        job: userUpdateJob,
+      })
+      .then(() => {
+        alert('User Updated');
+      });
   };
 
   return (
@@ -58,7 +72,14 @@ const Homepage = () => {
                   <td>{user.name}</td>
                   <td>{user.job}</td>
                   <td className="flex gap-2">
-                    <button className="btn btn-success btn-sm">edit</button>
+                    {/* <button className="btn btn-success btn-sm">edit</button> */}
+                    <label
+                      for="update-modal"
+                      className="btn btn-success btn-sm"
+                      onClick={() => setUserIdUpdate(user.id)}
+                    >
+                      edit
+                    </label>
                     <label
                       for="delete-modal"
                       className="btn btn-error btn-sm"
@@ -121,6 +142,40 @@ const Homepage = () => {
                   Submit
                 </label>
                 <label for="insert-modal" className="btn">
+                  Close
+                </label>
+              </div>
+            </div>
+          </div>
+          {/* update user modal */}
+          <input type="checkbox" id="update-modal" className="modal-toggle" />
+          <div className="modal">
+            <div className="modal-box">
+              <div className="form-control">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="input input-bordered"
+                  onChange={(e) => setUserUpdateName(e.target.value)}
+                />
+              </div>
+              <div className="form-control">
+                <input
+                  type="text"
+                  placeholder="Your Job"
+                  className="input input-bordered"
+                  onChange={(e) => setUserUpdateJob(e.target.value)}
+                />
+              </div>
+              <div className="modal-action">
+                <label
+                  for="update-modal"
+                  className="btn btn-primary"
+                  onClick={() => updateUser()}
+                >
+                  Update
+                </label>
+                <label for="update-modal" className="btn">
                   Close
                 </label>
               </div>

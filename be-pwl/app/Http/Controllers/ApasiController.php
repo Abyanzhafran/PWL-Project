@@ -75,7 +75,11 @@ class ApasiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tbl_homepage = Apasi::findOrFail($id);
+        $tbl_homepage->name = $request->name;
+        $tbl_homepage->job = $request->job;
+        $tbl_homepage->save();
+        return response()->json($request);
     }
 
     /**

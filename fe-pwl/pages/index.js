@@ -15,7 +15,7 @@ const Homepage = () => {
     });
   }, []);
 
-  const addUsers = () => {
+  const addUser = () => {
     axios
       .post(`http://127.0.0.1:8000/api/apasi`, {
         name: userInsertName,
@@ -52,24 +52,47 @@ const Homepage = () => {
               </tr>
             </thead>
             <tbody>
-              {users.map((item) => (
+              {users.map((user) => (
                 <tr>
-                  <th>{item.id}</th>
-                  <td>{item.name}</td>
-                  <td>{item.job}</td>
+                  <th>{user.id}</th>
+                  <td>{user.name}</td>
+                  <td>{user.job}</td>
                   <td className="flex gap-2">
                     <button className="btn btn-success btn-sm">edit</button>
-                    <button
+                    <label
+                      for="delete-modal"
                       className="btn btn-error btn-sm"
-                      onClick={() => setUserDelete(item.id)}
+                      onClick={() => setUserDelete(user.id)}
                     >
                       delete
-                    </button>
+                    </label>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
+          {/* delete user modal */}
+          <input type="checkbox" id="delete-modal" className="modal-toggle" />
+          <div className="modal">
+            <div className="modal-box">
+              <div className="form-control">
+                <div className="text-2xl font-bold">Want to delete ??</div>
+              </div>
+              <div className="modal-action">
+                <label
+                  for="delete-modal"
+                  className="btn btn-error"
+                  onClick={() => deleteUser()}
+                >
+                  Delete
+                </label>
+                <label for="delete-modal" className="btn">
+                  Close
+                </label>
+              </div>
+            </div>
+          </div>
+          {/* add user modal */}
           <input type="checkbox" id="insert-modal" className="modal-toggle" />
           <div className="modal">
             <div className="modal-box">
@@ -93,7 +116,7 @@ const Homepage = () => {
                 <label
                   for="insert-modal"
                   className="btn btn-primary"
-                  onClick={() => addUsers()}
+                  onClick={() => addUser()}
                 >
                   Submit
                 </label>

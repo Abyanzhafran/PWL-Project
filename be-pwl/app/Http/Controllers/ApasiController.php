@@ -86,8 +86,8 @@ class ApasiController extends Controller
      */
     public function destroy($id)
     {
-        // $tbl_homepage = Apasi::findOrFail($id);
-        // $tbl_homepage->delete();
-        // return response()->json($tbl_homepage);
+        $tbl_homepage = Apasi::findOrFail($id);
+        $tbl_homepage->delete();
+        return response()->json($tbl_homepage);
     }
 }

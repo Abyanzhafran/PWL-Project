@@ -3,7 +3,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 export default function Footer() {
   return (
-    <footer className="footer p-10 bg-primary text-secondary">
+    <footer className="footer p-10 bg-primary text-secondary-lighter">
       <div className="grid grid-flow-col">
         <div className="flex justify-around gap-10">
           <div className="w-1/2 lg:w-1/4 text-lg">

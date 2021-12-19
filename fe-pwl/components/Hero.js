@@ -22,7 +22,7 @@ export default function Hero() {
               <SouthEastIcon></SouthEastIcon>
             </span>
           </button>
-          <div className="flex justify-between lg:w-3/4">
+          <div className="flex justify-between pb-5 lg:pb-0 lg:w-3/4">
             <div>
               <span className="mr-2">
                 <DoneAllIcon></DoneAllIcon>

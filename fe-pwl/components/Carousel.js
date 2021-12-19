@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import img1 from '../public/images/1.jpg';
-import img2 from '../public/images/2.jpg';
-import img3 from '../public/images/3.jpg';
+import img1 from '../public/images/hero/1.jpg';
+import img2 from '../public/images/hero/2.jpg';
+import img3 from '../public/images/hero/3.jpg';
 export default function Carousel() {
   return (
     <>

@@ -4,6 +4,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import Inventory2Icon from '@mui/icons-material/Inventory2';
 import GroupIcon from '@mui/icons-material/Group';
 import CallIcon from '@mui/icons-material/Call';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 export default function LayoutDashboard({ children }) {
   const btnSidebar = [
@@ -36,41 +37,39 @@ export default function LayoutDashboard({ children }) {
 
   return (
     <>
-      <div class="rounded-lg shadow bg-base-200 drawer h-screen">
-        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-        <div class="flex flex-col drawer-content">
-          <div class="w-full navbar bg-base-300">
+      <div class="shadow bg-base-200 drawer drawer-mobile h-screen">
+        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+        <div class="flex flex-col items-center justify-center drawer-content">
+          <div class="w-full navbar flex items-center bg-skyNight">
             <div class="flex-none lg:hidden">
-              <label for="my-drawer-3" class="btn btn-square btn-ghost">
-                <MenuIcon />
+              <label for="my-drawer-2" class="btn btn-square btn-ghost">
+                <MenuIcon className="text-white" />
               </label>
             </div>
             <div class="flex-1 px-2 mx-2">
-              <span>Change screen size to show/hide menu</span>
+              <img src="/airGunIndo.png" className="w-32" />
             </div>
-            <div class="flex-none hidden lg:block">
-              <ul class="menu horizontal">
-                <li>
-                  <a class="rounded-btn">Item 1</a>
-                </li>
-                <li>
-                  <a class="rounded-btn">Item 2</a>
-                </li>
-              </ul>
-            </div>
+            <button class="flex items-center">
+              <div class="avatar">
+                <div class="rounded-full w-8 mt-1">
+                  <img src="http://daisyui.com/tailwind-css-component-profile-5@56w.png" />
+                </div>
+              </div>
+              <ArrowDropDownIcon className="text-white" />
+            </button>
           </div>
-          <main className="flex h-full w-full justify-center items-center">
+          <main className="flex h-full w-full justify-center items-start bg-gray-50">
             {children}
           </main>
         </div>
         <div class="drawer-side">
-          <label for="my-drawer-3" class="drawer-overlay"></label>
-          <ul class="p-4 overflow-y-auto menu w-80 bg-base-100">
+          <label for="my-drawer-2" class="drawer-overlay"></label>
+          <ul class="menu p-4 overflow-y-auto w-80 bg-skyNight text-base-content">
             <div>
-              <span className="text-xl font-bold">Dashboard</span>
+              <span className="text-xl font-bold text-white">Dashboard</span>
             </div>
-            <div class="divider" />
-            <li>
+            <div className="border-b-2 bg-white my-4" />
+            <li className="text-white">
               {btnSidebar.map((el) => (
                 <a className="flex gap-3" href={el.link}>
                   {el.icon}

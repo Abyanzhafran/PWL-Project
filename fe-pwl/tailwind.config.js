@@ -15,6 +15,7 @@ module.exports = {
         tertriary: {
           DEFAULT: '#58A4B0',
         },
+        skyNight: '#13293D',
       },
     },
   },

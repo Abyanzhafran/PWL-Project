@@ -13,7 +13,8 @@ module.exports = {
           lighter: '#D8DBE2',
         },
         tertriary: {
-          DEFAULT: '#58A4B0',
+          DEFAULT: '#1B98E0',
+          lighter: '#58A4B0',
         },
       },
     },

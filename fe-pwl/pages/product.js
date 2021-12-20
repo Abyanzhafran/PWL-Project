@@ -1,6 +1,19 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import LayoutDashboard from '../components/LayoutDashboard';
 
 const product = () => {
+  const url = 'http://127.0.0.1:8000/api/product';
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      setProducts(res.data);
+    });
+  }, []);
+
+  console.log(products);
+
   return (
     <LayoutDashboard>
       <div class="overflow-x-auto mt-14">

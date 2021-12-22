@@ -1,6 +1,4 @@
 import SignUp from '../components/SignUp';
-import SignIn from '../components/SignIn';
-import Image from 'next/image';
 import SignUpHero from '../public/svg/SignUpHero';
 export default function () {
   return (

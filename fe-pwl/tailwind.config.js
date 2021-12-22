@@ -16,6 +16,7 @@ module.exports = {
           DEFAULT: '#1B98E0',
           lighter: '#58A4B0',
         },
+        skyNight: '#13293D',
       },
     },
   },

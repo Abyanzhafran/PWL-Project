@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <div className="navbar mb-2 shadow-lg bg-primary text-secondary">
+    <div className="navbar shadow-lg  bg-primary text-secondary sticky top-0 z-50">
       <div className="navbar-start px-2 mx-2">
         <span className="text-lg">AirGun</span>
       </div>

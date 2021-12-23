@@ -11,27 +11,27 @@ export default function LayoutDashboard({ children }) {
     {
       icon: <LoginIcon />,
       name: 'LOGIN',
-      link: '/dashboard',
+      link: '/dashboard_product',
     },
     {
       icon: <HomeIcon />,
       name: 'HOME',
-      link: '/dashboard',
+      link: '/dashboard_product',
     },
     {
       icon: <Inventory2Icon />,
       name: 'PRODUCT',
-      link: '/dashboard',
+      link: '/dashboard_product',
     },
     {
       icon: <GroupIcon />,
       name: 'TIM',
-      link: '/dashboard',
+      link: '/dashboard_product',
     },
     {
       icon: <CallIcon />,
       name: 'CONTACT US',
-      link: '/dashboard',
+      link: '/dashboard_product',
     },
   ];
 

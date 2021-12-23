@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import LayoutDashboard from '../components/LayoutDashboard';
+import AddIcon from '@mui/icons-material/Add';
 
 const dashboard_product = () => {
   const url = 'http://127.0.0.1:8000/api/product';
@@ -18,8 +19,10 @@ const dashboard_product = () => {
     <LayoutDashboard>
       <div className="flex flex-col w-full px-4 mt-10">
         <div className="flex gap-2">
-          <button class="btn btn-info btn-sm">Tambah</button>
-          <button class="btn btn-info btn-sm">Update</button>
+          <button class="btn btn-info btn-sm">
+            <AddIcon />
+            Tambah
+          </button>
         </div>
         <div class="overflow-x-auto mt-10">
           <table class="table w-full">

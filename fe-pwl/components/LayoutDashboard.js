@@ -40,7 +40,7 @@ export default function LayoutDashboard({ children }) {
       <div class="shadow bg-base-200 drawer drawer-mobile h-screen">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
         <div class="flex flex-col items-center justify-center drawer-content">
-          <div class="w-full navbar flex items-center bg-skyNight">
+          <div class="w-full navbar flex items-center bg-skyNight sticky top-0">
             <div class="flex-none lg:hidden">
               <label for="my-drawer-2" class="btn btn-square btn-ghost">
                 <MenuIcon className="text-white" />

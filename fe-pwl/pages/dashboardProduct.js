@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import axios from 'axios';
 import LayoutDashboard from '../components/LayoutDashboard';
 import AddIcon from '@mui/icons-material/Add';
@@ -10,19 +11,22 @@ const dashboard_product = () => {
   useEffect(() => {
     axios.get(url).then((res) => {
       setProducts(res.data);
+      console.log(res.data);
     });
   }, []);
 
-  // console.log(products);
+  // console.log(setProducts(res.data));
 
   return (
     <LayoutDashboard>
-      <div className="flex flex-col w-full px-4 mt-10">
+      <div className="flex flex-col w-full px-4 mt-14">
         <div className="flex gap-2">
-          <button class="btn btn-info btn-sm">
-            <AddIcon />
-            Tambah
-          </button>
+          <Link href="/formInputProduct">
+            <a class="btn btn-info btn-sm">
+              <AddIcon />
+              Tambah
+            </a>
+          </Link>
         </div>
         <div class="overflow-x-auto mt-10">
           <table class="table w-full">

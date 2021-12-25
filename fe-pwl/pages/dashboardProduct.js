@@ -7,7 +7,7 @@ import AddIcon from '@mui/icons-material/Add';
 const dashboard_product = () => {
   const url = 'http://127.0.0.1:8000/api/product';
   const [products, setProducts] = useState([]);
-  const [updateProductId, setupdateProductId] = useState('');
+  const [ProductId, setProductId] = useState('');
   const [updateProductName, setUpdateProductName] = useState('');
   const [updateProductHarga, setUpdateProductHarga] = useState('');
   const [updateProductStok, setUpdateProductStok] = useState('');
@@ -16,13 +16,12 @@ const dashboard_product = () => {
   useEffect(() => {
     axios.get(url).then((res) => {
       setProducts(res.data);
-      console.log(res.data);
     });
   }, []);
 
   const updateProduct = () => {
     axios
-      .put(`http://127.0.0.1:8000/api/product/${updateProductId}`, {
+      .put(`http://127.0.0.1:8000/api/product/${ProductId}`, {
         nama_produk: updateProductName,
         harga: updateProductHarga,
         stok_barang: updateProductStok,
@@ -31,6 +30,12 @@ const dashboard_product = () => {
       .then(() => {
         alert('Product Updated');
       });
+  };
+
+  const deleteProduct = () => {
+    axios.delete(`http://127.0.0.1:8000/api/product/${ProductId}`).then(() => {
+      alert('Product Deleted');
+    });
   };
 
   return (
@@ -68,11 +73,17 @@ const dashboard_product = () => {
                     <label
                       class="btn btn-xs btn-success modal-button"
                       for="my-modal-2"
-                      onClick={() => setupdateProductId(prod.id)}
+                      onClick={() => setProductId(prod.id)}
                     >
                       Edit
                     </label>
-                    <button class="btn btn-xs btn-error">Delete</button>
+                    <label
+                      class="btn btn-xs btn-error"
+                      for="my-modal-3"
+                      onClick={() => setProductId(prod.id)}
+                    >
+                      Delete
+                    </label>
                     <button class="btn btn-xs btn-info">Publish</button>
                   </td>
                 </tr>
@@ -85,10 +96,10 @@ const dashboard_product = () => {
         <div className="modal overflow-y-auto">
           <div className="modal-box">
             {products
-              .filter((x) => x.id == updateProductId)
+              .filter((x) => x.id == ProductId)
               .map((prod) => (
                 <div className="flex flex-col gap-4 mt-8">
-                  <span>{updateProductId}</span>
+                  <span>{ProductId}</span>
                   <input
                     placeholder={prod.nama_produk}
                     class="input input-bordered"
@@ -127,6 +138,25 @@ const dashboard_product = () => {
                 Update
               </label>
               <label for="my-modal-2" className="btn">
+                Close
+              </label>
+            </div>
+          </div>
+        </div>
+        {/* delete modal */}
+        <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+        <div class="modal">
+          <div class="modal-box">
+            <span>Sure want to Delete ??</span>
+            <div class="modal-action">
+              <label
+                for="my-modal-3"
+                class="btn btn-primary"
+                onClick={() => deleteProduct()}
+              >
+                Delete
+              </label>
+              <label for="my-modal-3" class="btn">
                 Close
               </label>
             </div>

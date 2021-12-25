@@ -77,7 +77,13 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tbl_produk = Product::findOrFail($id);
+        $tbl_produk->nama_produk = $request->nama_produk;
+        $tbl_produk->harga = $request->harga;
+        $tbl_produk->stok_barang = $request->stok_barang;
+        $tbl_produk->merk_barang = $request->merk_barang;
+        $tbl_produk->save();
+        return response()->json($request);
     }
 
     /**

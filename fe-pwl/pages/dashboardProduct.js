@@ -7,6 +7,11 @@ import AddIcon from '@mui/icons-material/Add';
 const dashboard_product = () => {
   const url = 'http://127.0.0.1:8000/api/product';
   const [products, setProducts] = useState([]);
+  const [updateProductId, setupdateProductId] = useState('');
+  const [updateProductName, setUpdateProductName] = useState('');
+  const [updateProductHarga, setUpdateProductHarga] = useState('');
+  const [updateProductStok, setUpdateProductStok] = useState('');
+  const [updateProductMerk, setUpdateProductMerk] = useState('');
 
   useEffect(() => {
     axios.get(url).then((res) => {
@@ -15,7 +20,18 @@ const dashboard_product = () => {
     });
   }, []);
 
-  // console.log(setProducts(res.data));
+  const updateProduct = () => {
+    axios
+      .put(`http://127.0.0.1:8000/api/product/${updateProductId}`, {
+        nama_produk: updateProductName,
+        harga: updateProductHarga,
+        stok_barang: updateProductStok,
+        merk_barang: updateProductMerk,
+      })
+      .then(() => {
+        alert('Product Updated');
+      });
+  };
 
   return (
     <LayoutDashboard>
@@ -43,13 +59,19 @@ const dashboard_product = () => {
             <tbody>
               {products.map((prod) => (
                 <tr>
-                  <td>{prod.id_produk}</td>
+                  <td>{prod.id}</td>
                   <td>{prod.nama_produk}</td>
                   <td>{prod.harga}</td>
                   <td>{prod.stok_barang}</td>
                   <td>{prod.merk_barang}</td>
                   <td className="flex gap-1">
-                    <button class="btn btn-xs btn-success">Edit</button>
+                    <label
+                      class="btn btn-xs btn-success modal-button"
+                      for="my-modal-2"
+                      onClick={() => setupdateProductId(prod.id)}
+                    >
+                      Edit
+                    </label>
                     <button class="btn btn-xs btn-error">Delete</button>
                     <button class="btn btn-xs btn-info">Publish</button>
                   </td>
@@ -57,6 +79,58 @@ const dashboard_product = () => {
               ))}
             </tbody>
           </table>
+        </div>
+        {/* update modal */}
+        <input type="checkbox" id="my-modal-2" class="modal-toggle" />
+        <div className="modal overflow-y-auto">
+          <div className="modal-box">
+            {products
+              .filter((x) => x.id == updateProductId)
+              .map((prod) => (
+                <div className="flex flex-col gap-4 mt-8">
+                  <span>{updateProductId}</span>
+                  <input
+                    placeholder={prod.nama_produk}
+                    class="input input-bordered"
+                    type="text"
+                    onChange={(e) => setUpdateProductName(e.target.value)}
+                  />
+
+                  <input
+                    placeholder={prod.harga}
+                    class="input input-bordered"
+                    type="number"
+                    onChange={(e) => setUpdateProductHarga(e.target.value)}
+                  />
+
+                  <input
+                    placeholder={prod.stok_barang}
+                    class="input input-bordered"
+                    type="number"
+                    onChange={(e) => setUpdateProductStok(e.target.value)}
+                  />
+
+                  <input
+                    placeholder={prod.merk_barang}
+                    class="input input-bordered"
+                    type="text"
+                    onChange={(e) => setUpdateProductMerk(e.target.value)}
+                  />
+                </div>
+              ))}
+            <div className="modal-action">
+              <label
+                for="my-modal-2"
+                className="btn btn-primary"
+                onClick={() => updateProduct()}
+              >
+                Update
+              </label>
+              <label for="my-modal-2" className="btn">
+                Close
+              </label>
+            </div>
+          </div>
         </div>
       </div>
     </LayoutDashboard>

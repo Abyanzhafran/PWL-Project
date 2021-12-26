@@ -45,7 +45,7 @@ const dashboard_product = () => {
           <Link href="/formInputProduct">
             <a class="btn btn-info btn-sm">
               <AddIcon />
-              Tambah
+              Tambah Produk
             </a>
           </Link>
         </div>

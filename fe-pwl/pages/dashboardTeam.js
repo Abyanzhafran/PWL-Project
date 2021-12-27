@@ -49,10 +49,13 @@ const dashboardTeam = () => {
   return (
     <LayoutDashboard>
       <div className="flex flex-col w-full px-4 mt-14">
-        <div className="flex gap-2">
+        <div className="flex justify-between gap-2">
+          <div className="ml-4">
+            <span className="font-bold text-2xl">TEAM</span>
+          </div>
           <label class="btn btn-info btn-sm" for="my-modal-1">
             <AddIcon />
-            Tambah Tim
+            Add Team
           </label>
         </div>
         <div className="overflow-x-auto mt-10">
@@ -136,7 +139,6 @@ const dashboardTeam = () => {
             .map((team) => (
               <div className="flex flex-col gap-4 mt-8">
                 <span className="font-bold text-2xl">Edit Data Tim</span>
-                <span>{teamId}</span>
                 <input
                   placeholder={team.nama}
                   class="input input-bordered"

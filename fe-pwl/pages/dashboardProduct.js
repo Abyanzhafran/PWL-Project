@@ -41,11 +41,14 @@ const dashboard_product = () => {
   return (
     <LayoutDashboard>
       <div className="flex flex-col w-full px-4 mt-14">
-        <div className="flex gap-2">
+        <div className="flex justify-between gap-2">
+          <div className="ml-4">
+            <span className="font-bold text-2xl">PRODUCT</span>
+          </div>
           <Link href="/formInputProduct">
             <a class="btn btn-info btn-sm">
               <AddIcon />
-              Tambah Produk
+              Add Product
             </a>
           </Link>
         </div>
@@ -166,5 +169,7 @@ const dashboard_product = () => {
     </LayoutDashboard>
   );
 };
+
+// dashboard_product.LayoutDashboard;
 
 export default dashboard_product;

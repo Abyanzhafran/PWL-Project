@@ -1,22 +1,18 @@
+import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
 import LoginIcon from '@mui/icons-material/Login';
 import HomeIcon from '@mui/icons-material/Home';
 import Inventory2Icon from '@mui/icons-material/Inventory2';
 import GroupIcon from '@mui/icons-material/Group';
-import CallIcon from '@mui/icons-material/Call';
+import ArticleIcon from '@mui/icons-material/Article';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 export default function LayoutDashboard({ children }) {
   const btnSidebar = [
     {
-      icon: <LoginIcon />,
-      name: 'LOGIN',
-      link: '/dashboardProduct',
-    },
-    {
       icon: <HomeIcon />,
       name: 'HOME',
-      link: '/dashboardProduct',
+      link: '/dashboardHome',
     },
     {
       icon: <Inventory2Icon />,
@@ -29,9 +25,9 @@ export default function LayoutDashboard({ children }) {
       link: '/dashboardTeam',
     },
     {
-      icon: <CallIcon />,
-      name: 'CONTACT US',
-      link: '/dashboardProduct',
+      icon: <ArticleIcon />,
+      name: 'EDIT HISTORY',
+      link: '/dashboardHistory',
     },
   ];
 
@@ -71,10 +67,12 @@ export default function LayoutDashboard({ children }) {
             <div className="border-b-2 bg-white my-4" />
             <li className="text-white">
               {btnSidebar.map((el) => (
-                <a className="flex gap-3" href={el.link}>
-                  {el.icon}
-                  {el.name}
-                </a>
+                <Link href={el.link}>
+                  <a className="flex gap-3">
+                    {el.icon}
+                    {el.name}
+                  </a>
+                </Link>
               ))}
             </li>
           </ul>

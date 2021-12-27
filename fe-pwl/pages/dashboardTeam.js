@@ -31,13 +31,19 @@ const dashboardTeam = () => {
 
   const updateTeam = () => {
     axios
-      .put(`http://127.0.0.1:8000/api/team/${teamId}`, {
+      .put(url + `/${teamId}`, {
         nama: updateTeamName,
         nim: updateTeamNim,
       })
       .then(() => {
         alert('team updated');
       });
+  };
+
+  const deleteTeam = () => {
+    axios.delete(url + `/${teamId}`).then(() => {
+      alert('Team Deleted');
+    });
   };
 
   return (
@@ -154,6 +160,25 @@ const dashboardTeam = () => {
               Update
             </label>
             <label for="my-modal-2" className="btn">
+              Close
+            </label>
+          </div>
+        </div>
+      </div>
+      {/* delete modal */}
+      <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+      <div class="modal">
+        <div class="modal-box">
+          <span>Sure want to Delete ??</span>
+          <div class="modal-action">
+            <label
+              for="my-modal-3"
+              class="btn btn-primary"
+              onClick={() => deleteTeam()}
+            >
+              Delete
+            </label>
+            <label for="my-modal-3" class="btn">
               Close
             </label>
           </div>

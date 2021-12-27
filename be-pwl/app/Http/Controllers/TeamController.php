@@ -90,6 +90,8 @@ class TeamController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tbl_team = Team::findOrFail($id);
+        $tbl_team->delete();
+        return response()->json($tbl_team);
     }
 }

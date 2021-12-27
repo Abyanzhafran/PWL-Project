@@ -21,7 +21,7 @@ const dashboard_product = () => {
 
   const updateProduct = () => {
     axios
-      .put(`http://127.0.0.1:8000/api/product/${ProductId}`, {
+      .put(url + `/${ProductId}`, {
         nama_produk: updateProductName,
         harga: updateProductHarga,
         stok_barang: updateProductStok,
@@ -33,7 +33,7 @@ const dashboard_product = () => {
   };
 
   const deleteProduct = () => {
-    axios.delete(`http://127.0.0.1:8000/api/product/${ProductId}`).then(() => {
+    axios.delete(url + `/${ProductId}`).then(() => {
       alert('Product Deleted');
     });
   };

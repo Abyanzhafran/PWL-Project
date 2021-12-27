@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ProductController extends Controller
+class TeamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $tbl_produk = DB::table('produk')->get();
-        return response()->json($tbl_produk);
+        $tbl_team = DB::table('tim')->get();
+        return response()->json($tbl_team);
     }
 
     /**
@@ -37,12 +37,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $tbl_produk = new Product;
-        $tbl_produk->nama_produk = $request->nama_produk;
-        $tbl_produk->harga = $request->harga;
-        $tbl_produk->stok_barang = $request->stok_barang;
-        $tbl_produk->merk_barang = $request->merk_barang;
-        $tbl_produk->save();
+        $tbl_team = new Team;
+        $tbl_team->nama = $request->nama;
+        $tbl_team->nim = $request->nim;
+        $tbl_team->save();
         return response()->json($request);
     }
 
@@ -77,12 +75,10 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tbl_produk = Product::findOrFail($id);
-        $tbl_produk->nama_produk = $request->nama_produk;
-        $tbl_produk->harga = $request->harga;
-        $tbl_produk->stok_barang = $request->stok_barang;
-        $tbl_produk->merk_barang = $request->merk_barang;
-        $tbl_produk->save();
+        $tbl_team = Team::findOrFail($id);
+        $tbl_team->nama = $request->nama;
+        $tbl_team->nim = $request->nim;
+        $tbl_team->save();
         return response()->json($request);
     }
 
@@ -94,8 +90,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $tbl_produk = Product::findOrFail($id);
-        $tbl_produk->delete();
-        return response()->json($tbl_produk);
+        $tbl_team = Team::findOrFail($id);
+        $tbl_team->delete();
+        return response()->json($tbl_team);
     }
 }

@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 import FooterLower from '../components/FooterLower';
-import Card from '../components/Card';
+import ProductList from '../components/ProductList';
 import Layout from '../components/Layout';
 import Head from 'next/head';
 
@@ -25,21 +25,9 @@ const homepage = () => {
             terbaik.
           </p>
         </div>
-        <div className="mx-auto lg:flex">
-          <div>
-            <p className="text-lg py-5 uppercase">Senapan Angin</p>
-            <div className="flex-col lg:flex">
-              <Card></Card>
-              <Card></Card>
-            </div>
-          </div>
-          <div>
-            <p className="text-lg py-5 uppercase">Pistol Angin</p>
-            <Card></Card>
-            <Card></Card>
-          </div>
-        </div>
+        <ProductList></ProductList>
       </Layout>
+      <Layout></Layout>
       <Footer></Footer>
       <FooterLower></FooterLower>
     </>

@@ -36,6 +36,7 @@ const homepage = () => {
           <div>
             <p className="text-lg py-5 uppercase">Pistol Angin</p>
             <Card></Card>
+            <Card></Card>
           </div>
         </div>
       </Layout>

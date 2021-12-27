@@ -1,18 +1,16 @@
 import Image from 'next/image';
 import cardImage1 from '../public/images/cards/1.jpg';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-export default function Card() {
+export default function Card({ head, price }) {
   return (
     <div className="card bordered bg-secondary-lighter text-primary max-w-min ">
       <figure>
         <Image src={cardImage1}></Image>
       </figure>
       <div className="card-body">
-        <div className="card-title">
-          Senapan Angin PCP RIFLE FX IMPACT X MKII BLACK
-        </div>
+        <div className="card-title">{head}</div>
         <div className="flex">
-          <p>Rp.32.000.000,00</p>
+          <p>{price}</p>
           <span>
             <ShoppingBagIcon></ShoppingBagIcon>
           </span>

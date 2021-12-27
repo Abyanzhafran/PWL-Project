@@ -1,17 +1,16 @@
 import Image from 'next/image';
-import cardImage1 from '../public/images/cards/1.jpg';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-export default function Card({ head, price }) {
+export default function Card({ head, price, cardImage }) {
   return (
-    <div className="card bordered bg-secondary-lighter text-primary max-w-min m-3">
+    <div className="card card-bordered bg-secondary-lighter text-primary max-w-min m-3">
       <figure>
-        <Image layout="responsive" src={cardImage1}></Image>
+        <Image layout="responsive" src={cardImage}></Image>
       </figure>
       <div className="card-body">
         <div className="card-title">{head}</div>
-        <div className="flex justify-between items-end">
+        <div className="flex justify-center items-end">
           <p>{'Rp.' + price}</p>
-          <span>
+          <span className="hidden lg:block">
             <ShoppingBagIcon></ShoppingBagIcon>
           </span>
         </div>

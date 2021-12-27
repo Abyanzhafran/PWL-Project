@@ -4,19 +4,19 @@ import img2 from '../public/images/hero/2.jpg';
 import img3 from '../public/images/hero/3.jpg';
 export default function Carousel() {
   return (
-    <>
-      <div className="carousel w-full">
-        <div id="item1" className="w-full pt-20 carousel-item">
+    <div className="flex-col">
+      <div className="carousel w-full rounded-xl">
+        <div id="item1" className="w-full carousel-item">
           <Image src={img1}></Image>
         </div>
-        <div id="item2" className="w-full pt-20 carousel-item">
+        <div id="item2" className="w-full carousel-item">
           <Image src={img2}></Image>
         </div>
-        <div id="item3" className="w-full pt-20 carousel-item">
+        <div id="item3" className="w-full carousel-item">
           <Image src={img3}></Image>
         </div>
       </div>
-      <div className="flex justify-center w-full py-5 btn-group">
+      <div className="hidden lg:flex justify-center w-full py-5 btn-group">
         <a href="#item1" className="btn btn-sm">
           1
         </a>
@@ -27,6 +27,6 @@ export default function Carousel() {
           3
         </a>
       </div>
-    </>
+    </div>
   );
 }

@@ -1,8 +1,8 @@
+import ProductList from '../components/ProductList';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 import FooterLower from '../components/FooterLower';
-import ProductList from '../components/ProductList';
 import TeamList from '../components/TeamList';
 import Layout from '../components/Layout';
 import Head from 'next/head';
@@ -13,9 +13,9 @@ const homepage = () => {
       <Head>
         <title>Airgun Indonesia</title>
       </Head>
-      <Navbar></Navbar>
+      <Navbar />
       <Layout className={`bg-primary`}>
-        <Hero></Hero>
+        <Hero />
       </Layout>
       <Layout className={`bg-primary-lighter text-secondary-lighter`}>
         <div className=" text-center font-bold py-10 lg:py-20">
@@ -26,17 +26,17 @@ const homepage = () => {
             terbaik.
           </p>
         </div>
-        <ProductList></ProductList>
+        <ProductList />
       </Layout>
       <Layout className={`bg-primary text-secondary-lighter`}>
         <div className=" text-center font-bold py-10 lg:py-20">
           <p className="text-2xl py-5 uppercase">Our Team</p>
           <p className="text-md px-10 lg:text-lg">Meet Our Team!</p>
         </div>
-        <TeamList></TeamList>
+        <TeamList />
       </Layout>
-      <Footer></Footer>
-      <FooterLower></FooterLower>
+      <Footer />
+      <FooterLower />
     </>
   );
 };

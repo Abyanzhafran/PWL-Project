@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2021 at 11:48 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.3.33
+-- Waktu pembuatan: 29 Des 2021 pada 14.47
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `administrasi`
+-- Struktur dari tabel `administrasi`
 --
 
 CREATE TABLE `administrasi` (
@@ -35,7 +35,7 @@ CREATE TABLE `administrasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `administrasi`
+-- Dumping data untuk tabel `administrasi`
 --
 
 INSERT INTO `administrasi` (`id_admin`, `nama_admin`, `admin_username`, `admin_password`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `administrasi` (`id_admin`, `nama_admin`, `admin_username`, `admin_p
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer`
+-- Struktur dari tabel `customer`
 --
 
 CREATE TABLE `customer` (
@@ -64,7 +64,7 @@ CREATE TABLE `customer` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -73,7 +73,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
@@ -84,7 +84,7 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pembayaran`
+-- Struktur dari tabel `pembayaran`
 --
 
 CREATE TABLE `pembayaran` (
@@ -98,7 +98,7 @@ CREATE TABLE `pembayaran` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Struktur dari tabel `produk`
 --
 
 CREATE TABLE `produk` (
@@ -114,22 +114,21 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `produk`
+-- Dumping data untuk tabel `produk`
 --
 
 INSERT INTO `produk` (`id`, `nama_produk`, `id_kategori`, `harga`, `stok_barang`, `merk_barang`, `link_gambar`, `created_at`, `updated_at`) VALUES
 (1, 'Pistol Angin PCP Model Feinwerkbau Model P11', 1, 23000000, 23, 'Feinwerkbau', '', NULL, NULL),
 (2, 'Pistol Angin PCP Feinwerkbau P8X Import', 1, 29000000, 33, 'Feinwerkbau', '', NULL, NULL),
 (3, 'FEINWERKBAU Pistol Match PCP P8 X', 1, 29800000, 14, 'Feinwerkbau', '', NULL, NULL),
-(4, 'Steyr LG110 High Power Black QF', 2, 25900000, 30, 'Steyr', '', NULL, NULL),
-(5, 'Senapan Angin PCP STEYR STEYR CHALLENGE FIELD TARGET', 2, 34900000, 20, 'Steyr', '', NULL, NULL),
-(9, 'mamen', NULL, 1212, 12, 'adw', NULL, '2021-12-23 03:08:25', '2021-12-25 05:45:53'),
-(13, 'something good', NULL, 13, 13, 'something good', NULL, '2021-12-25 06:15:58', '2021-12-25 06:15:58');
+(4, 'Steyr LG110 High Power Black QF', 2, 25900000, 30, 'steyr', '', NULL, NULL),
+(5, 'Senapan Angin PCP STEYR STEYR CHALLENGE FIELD TARGET', 2, 34900000, 20, 'steyr', '', NULL, NULL),
+(16, 'Steyr LG110 High Power Black QF', NULL, 1200, 14, 'steyr', NULL, '2021-12-29 06:39:52', '2021-12-29 06:39:52');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tim`
+-- Struktur dari tabel `tim`
 --
 
 CREATE TABLE `tim` (
@@ -141,7 +140,7 @@ CREATE TABLE `tim` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tim`
+-- Dumping data untuk tabel `tim`
 --
 
 INSERT INTO `tim` (`id`, `nama`, `nim`, `created_at`, `updated_at`) VALUES
@@ -158,25 +157,25 @@ INSERT INTO `tim` (`id`, `nama`, `nim`, `created_at`, `updated_at`) VALUES
 --
 
 --
--- Indexes for table `administrasi`
+-- Indeks untuk tabel `administrasi`
 --
 ALTER TABLE `administrasi`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `customer`
+-- Indeks untuk tabel `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`id_customer`);
 
 --
--- Indexes for table `kategori`
+-- Indeks untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indexes for table `pembayaran`
+-- Indeks untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
   ADD PRIMARY KEY (`id_pembayaran`),
@@ -184,71 +183,71 @@ ALTER TABLE `pembayaran`
   ADD KEY `id_produk` (`id_produk`);
 
 --
--- Indexes for table `produk`
+-- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_kategori` (`id_kategori`);
 
 --
--- Indexes for table `tim`
+-- Indeks untuk tabel `tim`
 --
 ALTER TABLE `tim`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `administrasi`
+-- AUTO_INCREMENT untuk tabel `administrasi`
 --
 ALTER TABLE `administrasi`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3301;
 
 --
--- AUTO_INCREMENT for table `customer`
+-- AUTO_INCREMENT untuk tabel `customer`
 --
 ALTER TABLE `customer`
   MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `pembayaran`
+-- AUTO_INCREMENT untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
   MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `produk`
+-- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `tim`
+-- AUTO_INCREMENT untuk tabel `tim`
 --
 ALTER TABLE `tim`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `pembayaran`
+-- Ketidakleluasaan untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
   ADD CONSTRAINT `pembayaran_ibfk_1` FOREIGN KEY (`id_customer`) REFERENCES `customer` (`id_customer`),
   ADD CONSTRAINT `pembayaran_ibfk_2` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id`);
 
 --
--- Constraints for table `produk`
+-- Ketidakleluasaan untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`);

@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import ProductList from '../components/ProductList';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
@@ -8,6 +10,15 @@ import Layout from '../components/Layout';
 import Head from 'next/head';
 
 const homepage = () => {
+  const url = 'http://127.0.0.1:8000/api/team';
+  const [teams, setTeams] = useState([]);
+
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      setTeams(res.data);
+    });
+  }, []);
+
   return (
     <>
       <Head>
@@ -50,12 +61,15 @@ const homepage = () => {
         </div>
         <ProductList />
       </Layout>
-      <Layout className={`bg-primary text-secondary-lighter`}>
-        <div className=" text-center font-bold py-10 lg:py-20">
-          <p className="text-2xl py-5 uppercase">Our Team</p>
-          <p className="text-md px-10 lg:text-lg">Meet Our Team!</p>
+      <Layout className={`bg-primary-lighter text-secondary-lighter pb-24`}>
+        <div className=" text-center font-bold py-10">
+          <p className="text-2xl py-5 uppercase">Meet Our Team!</p>
         </div>
-        <TeamList />
+        <div className="flex flex-wrap justify-center gap-6">
+          {teams.map((team) => (
+            <TeamList name={team.nama} nim={team.nim} />
+          ))}
+        </div>
       </Layout>
       <Footer />
       <FooterLower />

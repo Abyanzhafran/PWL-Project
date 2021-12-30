@@ -19,6 +19,20 @@ class TeamController extends Controller
         return response()->json($tbl_team);
     }
 
+    public function login(Request $request, $nama)
+    {
+        $fields = $request->validate([
+            'nama' => 'required|string'
+        ]);
+
+        $tbl_team = Team::where('nama', $fields['nama'])->first();
+        $response = [
+            'nama' => $tbl_team
+        ];
+
+        return response($response, 201);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

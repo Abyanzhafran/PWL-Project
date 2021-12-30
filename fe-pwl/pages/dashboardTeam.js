@@ -89,7 +89,6 @@ const dashboardTeam = () => {
                     >
                       Delete
                     </label>
-                    <label className="btn btn-xs btn-info">Publish</label>
                   </td>
                 </tr>
               ))}

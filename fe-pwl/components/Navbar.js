@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Navbar() {
   return (
     <div className="navbar shadow-lg  bg-primary text-secondary sticky top-0 z-50">
@@ -53,7 +55,9 @@ export default function Navbar() {
               </svg>
             </button>
             <div className="divider divider-vertical"></div>
-            <button className="btn btn-ghost">Login</button>
+            <Link href="/login">
+              <button className="btn btn-ghost">Login Team</button>
+            </Link>
           </div>
         </div>
       </div>

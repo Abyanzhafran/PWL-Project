@@ -87,7 +87,6 @@ const dashboard_product = () => {
                     >
                       Delete
                     </label>
-                    <button class="btn btn-xs btn-info">Publish</button>
                   </td>
                 </tr>
               ))}

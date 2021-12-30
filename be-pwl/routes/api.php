@@ -20,6 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('team/{nama}', [TeamController::class, 'login']);
+
 Route::resource('product', ProductController::class)->except(['create', 'edit']);
 
 Route::resource('team', TeamController::class)->except(['create', 'edit']);

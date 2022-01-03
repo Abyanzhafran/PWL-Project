@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Des 2021 pada 14.47
+-- Waktu pembuatan: 03 Jan 2022 pada 13.16
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.3.33
 
@@ -20,31 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `pwl-db`
 --
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `administrasi`
---
-
-CREATE TABLE `administrasi` (
-  `id_admin` int(11) NOT NULL,
-  `nama_admin` varchar(100) DEFAULT NULL,
-  `admin_username` varchar(100) DEFAULT NULL,
-  `admin_password` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `administrasi`
---
-
-INSERT INTO `administrasi` (`id_admin`, `nama_admin`, `admin_username`, `admin_password`) VALUES
-(3252, 'MUHAMMAD ABYAN ZHAFRAN DAFFA', 'zhafran', 'hai123'),
-(3272, 'BILAL MUHTASYIMBILAH', 'bilal', 'hai123'),
-(3291, 'GALANG DIKA PERKASA', 'galang', 'hai123'),
-(3298, 'IGNATIUS TEGAR SAPUTRA', 'tegar', 'hai123'),
-(3299, 'CHRISTIAN ERWIN NUGROHO', 'erwin', 'hai123'),
-(3300, 'FANNI FADHILA', 'fanni', 'hai123');
 
 -- --------------------------------------------------------
 
@@ -135,6 +110,7 @@ CREATE TABLE `tim` (
   `id` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `nim` varchar(255) NOT NULL,
+  `pekerjaan` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -143,24 +119,18 @@ CREATE TABLE `tim` (
 -- Dumping data untuk tabel `tim`
 --
 
-INSERT INTO `tim` (`id`, `nama`, `nim`, `created_at`, `updated_at`) VALUES
-(1, 'Ignatius Tegar S', '19.11.3298', '2021-12-26 10:38:43', '2021-12-26 10:38:43'),
-(2, 'Bilal Muhtasyimbilah', '19.11.3272', '2021-12-26 10:38:43', '2021-12-26 10:38:43'),
-(3, 'M. Abyan Zhafran D', '19.11.3252', '2021-12-26 10:38:43', '2021-12-26 10:38:43'),
-(4, 'Fanni Fadhila', '19.11.3300', '2021-12-26 10:38:43', '2021-12-26 10:38:43'),
-(5, 'Christian Erwin Nugroho', '19.11', '2021-12-26 10:38:43', '2021-12-26 10:38:43'),
-(6, 'galang', '19.111.32', '2021-12-26 10:38:43', '2021-12-26 03:42:18'),
-(7, 'bambang', '19.11.32253', '2021-12-26 03:43:48', '2021-12-26 03:43:48');
+INSERT INTO `tim` (`id`, `nama`, `nim`, `pekerjaan`, `created_at`, `updated_at`) VALUES
+(1, 'Ignatius Tegar S', '19.11.3298', 'UI/UX Designer', '2021-12-26 10:38:43', '2021-12-26 10:38:43'),
+(2, 'Bilal Muhtasyimbilah', '19.11.3272', 'UI/UX Designer', '2021-12-26 10:38:43', '2021-12-26 10:38:43'),
+(3, 'M. Abyan Zhafran D', '19.11.3252', 'Backend Developer', '2021-12-26 10:38:43', '2021-12-26 10:38:43'),
+(4, 'Fanni Fadhila', '19.11.3300', 'Frontend Developer', '2021-12-26 10:38:43', '2021-12-26 10:38:43'),
+(5, 'Christian Erwin Nugroho', '19.11', 'Database Designer', '2021-12-26 10:38:43', '2021-12-26 10:38:43'),
+(6, 'Galang Dika', '19.111.32', 'Database Designer', '2021-12-26 10:38:43', '2021-12-26 03:42:18'),
+(7, 'bambang', '19', '', '2021-12-26 03:43:48', '2021-12-26 03:43:48');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indeks untuk tabel `administrasi`
---
-ALTER TABLE `administrasi`
-  ADD PRIMARY KEY (`id_admin`);
 
 --
 -- Indeks untuk tabel `customer`
@@ -198,12 +168,6 @@ ALTER TABLE `tim`
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
-
---
--- AUTO_INCREMENT untuk tabel `administrasi`
---
-ALTER TABLE `administrasi`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3301;
 
 --
 -- AUTO_INCREMENT untuk tabel `customer`

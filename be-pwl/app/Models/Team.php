@@ -9,5 +9,5 @@ class Team extends Model
 {
     // use HasFactory;
     protected $table = 'tim';
-    protected $fillable = ['id', 'nama', 'nim'];
+    protected $fillable = ['id', 'nama', 'nim', 'pekerjaan'];
 }

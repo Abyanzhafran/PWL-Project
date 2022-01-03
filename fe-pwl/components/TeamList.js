@@ -1,15 +1,20 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-const TeamList = ({ name, nim }) => {
+const TeamList = ({ name, nim, work }) => {
   return (
-    <div className="card shadow-2xl bg-gray-400 w-52 h-64">
+    <div className="card shadow-2xl bg-gray-400 w-52 h-auto">
       <div className="card-body">
         <div className="justify-center card-actions">
           <AccountCircleIcon className="w-20 h-20 text-blue-600" />
         </div>
-        <div className="w-full flex flex-col text-black font-bold text-lg items-center pt-4 text-center">
-          <span>{name}</span>
-          <span>{nim}</span>
+        <div className="w-full flex flex-col text-black text-lg items-center pt-4 text-center gap-2">
+          <div className="flex flex-col">
+            <span className="font-semibold">{name}</span>
+            <span className="font-semibold">{nim}</span>
+          </div>
+          <div>
+            <span className="font-bold">{work}</span>
+          </div>
         </div>
       </div>
     </div>

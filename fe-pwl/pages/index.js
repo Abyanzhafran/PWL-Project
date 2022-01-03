@@ -65,9 +65,9 @@ const homepage = () => {
         <div className=" text-center font-bold py-10">
           <p className="text-2xl py-5 uppercase">Meet Our Team!</p>
         </div>
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-4">
           {teams.map((team) => (
-            <TeamList name={team.nama} nim={team.nim} />
+            <TeamList name={team.nama} nim={team.nim} work={team.pekerjaan} />
           ))}
         </div>
       </Layout>

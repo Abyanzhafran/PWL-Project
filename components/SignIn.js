@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const SignIn = () => {
-  const url = 'http://127.0.0.1:8000/api/team';
+  const url = 'https://be-pwl.herokuapp.com/api/team';
   const [field, setField] = useState([]);
   const [name, setName] = useState('');
   const [nimm, setNim] = useState('');
@@ -19,7 +19,7 @@ const SignIn = () => {
       field.map((x) => x.nim == nimm).includes(true)
     ) {
       alert('silahkan masuk lurr');
-      window.location.href = 'http://localhost:3000/dashboardHome';
+      window.location.href = 'http://localhost:3001/dashboardHome';
     } else {
       alert('nama atau nim tidak terdaftar lurr');
     }

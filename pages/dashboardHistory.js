@@ -7,15 +7,15 @@ const dashboardHistory = () => {
         <div className="mb-4">
           <span className="font-bold text-2xl">EDIT HISTORY</span>
         </div>
-        <div class="form-control">
+        <div className="form-control">
           <textarea
-            class="textarea h-72 mb-10 textarea-bordered textarea-info"
+            className="textarea h-72 mb-10 textarea-bordered textarea-info"
             placeholder="Something in airgun history"
           ></textarea>
         </div>
         <div className="flex gap-2">
-          <button class="btn btn-info">Submit</button>
-          <button class="btn btn-error">Cancel</button>
+          <button className="btn btn-info">Submit</button>
+          <button className="btn btn-error">Cancel</button>
         </div>
       </div>
     </LayoutDashboard>

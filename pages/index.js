@@ -19,8 +19,6 @@ const homepage = () => {
     });
   }, []);
 
-  console.log(teams);
-
   return (
     <>
       <Head>
@@ -69,7 +67,12 @@ const homepage = () => {
         </div>
         <div className="flex flex-wrap justify-center gap-4">
           {teams.map((team) => (
-            <TeamList name={team.nama} nim={team.nim} work={team.pekerjaan} />
+            <TeamList
+              name={team.nama}
+              nim={team.nim}
+              work={team.pekerjaan}
+              key={team.id}
+            />
           ))}
         </div>
       </Layout>

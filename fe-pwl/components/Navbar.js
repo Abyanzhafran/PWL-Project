@@ -2,27 +2,26 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <div className="navbar shadow-lg  bg-primary text-secondary sticky top-0 z-50">
+    <div className="navbar shadow-lg  bg-primary text-secondary sticky top-0 z-10">
       <div className="navbar-start px-2 mx-2">
         <span className="text-lg">AirGun</span>
       </div>
       <div className="hidden navbar-center lg:flex">
         <div className="flex items-stretch">
-          <a href="#" className="btn btn-ghost btn-md">
-            Home
-          </a>
-          <a href="#" className="btn btn-ghost btn-md">
-            Product
-          </a>
-          <a href="#" className="btn btn-ghost btn-md">
-            Cart
-          </a>
-          <a href="#" className="btn btn-ghost btn-md">
-            Contact
-          </a>
-          <a href="#" className="btn btn-ghost btn-md">
-            About
-          </a>
+          <Link href="/#top">
+            <a className="btn btn-ghost btn-md">Home</a>
+          </Link>
+          <Link href="/#about">
+            <a className="btn btn-ghost btn-md">About</a>
+          </Link>
+          <Link href="#product">
+            <a className="btn btn-ghost btn-md">Product</a>
+          </Link>
+          <Link href="/#contact">
+            <a href="#" className="btn btn-ghost btn-md">
+              Contact
+            </a>
+          </Link>
         </div>
       </div>
       <div className="navbar-end">

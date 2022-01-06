@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProductList from '../components/ProductList';
+import Contact from '../components/Contact';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
@@ -25,17 +26,20 @@ const homepage = () => {
         <title>Airgun Indonesia</title>
       </Head>
       <Navbar />
-      <Layout className={`bg-primary`}>
+      <Layout className={`bg-primary`} id={'top'}>
         <Hero />
       </Layout>
-      <Layout className={`bg-primary-lighter text-secondary-lighter`}>
-        <div className="pt-10 pb-12">
+      <Layout
+        className={`bg-primary-lighter text-secondary-lighter`}
+        id={'about'}
+      >
+        <div className="pt-10 pb-12 px-10 lg:px-5">
           <div className="pb-6">
             <span className="font-bold text-4xl text-secondary-lighter">
               STEYR AIR RIFLES
             </span>
           </div>
-          <p className="text-lg">
+          <p className="text-md text-justify lg:text-lg">
             Senapan Udara Steyr untuk Berburu & Target adalah salah satu Senjata
             Udara kelas tertinggi yang tersedia di pasar dan merupakan standar
             Olimpiade. Dengan styre Air Rifles mereka dibuat bagian demi bagian,
@@ -50,10 +54,13 @@ const homepage = () => {
           </p>
         </div>
       </Layout>
-      <Layout className={`bg-primary-lighter text-secondary-lighter`}>
+      <Layout
+        className={`bg-primary-lighter text-secondary-lighter`}
+        id={'product'}
+      >
         <div className=" text-center font-bold py-10 lg:py-20">
           <p className="text-2xl py-5 uppercase">Daftar Produk Kami</p>
-          <p className="text-md px-10 lg:text-lg">
+          <p className="text-md px-10 lg:px-5 lg:text-lg">
             Berikut beberapa produk pilihan semuanya masih tersedia dengan stok
             yang banyak dan berbagai rentang harga. Beli dan nikmati kualitas
             terbaik.
@@ -70,6 +77,9 @@ const homepage = () => {
             <TeamList name={team.nama} nim={team.nim} work={team.pekerjaan} />
           ))}
         </div>
+      </Layout>
+      <Layout className={`bg-primary-lighter text-secondary-lighter pb-24`}>
+        <Contact></Contact>
       </Layout>
       <Footer />
       <FooterLower />

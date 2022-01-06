@@ -5,7 +5,7 @@ export default function Contact() {
         <p className="text-2xl py-5 uppercase">Ready to Shoot? Contact Us!</p>
       </div>
       <div className="flex items-center justify-center">
-        <div className="card card-bordered shadow-2xl w-1/2 lg:w-1/3">
+        <div className="card card-bordered shadow-2xl lg:w-1/2">
           <div className="card-body">
             <div className="flex flex-col">
               <div className="form-control">

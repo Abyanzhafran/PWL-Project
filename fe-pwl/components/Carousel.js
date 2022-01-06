@@ -16,7 +16,7 @@ export default function Carousel() {
           <Image src={img3}></Image>
         </div>
       </div>
-      <div className="hidden lg:flex justify-center w-full py-5 btn-group">
+      <div className="hidden lg:flex justify-center w-full py-5 btn-group z-10">
         <a href="#item1" className="btn btn-sm">
           1
         </a>

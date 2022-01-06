@@ -68,7 +68,10 @@ const homepage = () => {
         </div>
         <ProductList />
       </Layout>
-      <Layout className={`bg-primary-lighter text-secondary-lighter pb-24`}>
+      <Layout
+        className={`bg-primary-lighter text-secondary-lighter pb-24`}
+        id={'team'}
+      >
         <div className=" text-center font-bold py-10">
           <p className="text-2xl py-5 uppercase">Meet Our Team!</p>
         </div>
@@ -78,7 +81,10 @@ const homepage = () => {
           ))}
         </div>
       </Layout>
-      <Layout className={`bg-primary-lighter text-secondary-lighter pb-24`}>
+      <Layout
+        className={`bg-primary-lighter text-secondary-lighter pb-24`}
+        id={'contact'}
+      >
         <Contact></Contact>
       </Layout>
       <Footer />

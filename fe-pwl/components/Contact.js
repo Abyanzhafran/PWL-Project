@@ -4,8 +4,8 @@ export default function Contact() {
       <div className=" text-center font-bold py-10">
         <p className="text-2xl py-5 uppercase">Ready to Roll? Contact Us!</p>
       </div>
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="card card-bordered bg-white w-1/2 lg:w-1/3">
+      <div className="flex items-center justify-center">
+        <div className="card card-bordered bg-primary text-secondary-lighter w-1/2 lg:w-1/3">
           <div className="card-body">
             <div className="card-title mb-10">
               <h1 className="text-3xl font-bold uppercase text-center">

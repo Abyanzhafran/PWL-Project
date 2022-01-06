@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 export default function Navbar() {
   return (
@@ -8,20 +9,21 @@ export default function Navbar() {
       </div>
       <div className="hidden navbar-center lg:flex">
         <div className="flex items-stretch">
-          <Link href="/#top">
+          <AnchorLink href="#top" offset="100">
             <a className="btn btn-ghost btn-md">Home</a>
-          </Link>
-          <Link href="/#about">
+          </AnchorLink>
+          <AnchorLink href="#about">
             <a className="btn btn-ghost btn-md">About</a>
-          </Link>
-          <Link href="#product">
+          </AnchorLink>
+          <AnchorLink href="#product">
             <a className="btn btn-ghost btn-md">Product</a>
-          </Link>
-          <Link href="/#contact">
-            <a href="#" className="btn btn-ghost btn-md">
-              Contact
-            </a>
-          </Link>
+          </AnchorLink>
+          <AnchorLink href="#team">
+            <a className="btn btn-ghost btn-md">Team</a>
+          </AnchorLink>
+          <AnchorLink href="#contact">
+            <a className="btn btn-ghost btn-md">Contact</a>
+          </AnchorLink>
         </div>
       </div>
       <div className="navbar-end">

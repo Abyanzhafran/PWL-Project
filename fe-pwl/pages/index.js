@@ -36,21 +36,14 @@ const homepage = () => {
         <div className="pt-10 pb-12 px-10 lg:px-5">
           <div className="pb-6">
             <span className="font-bold text-4xl text-secondary-lighter">
-              STEYR AIR RIFLES
+              Air Gun Indonesia
             </span>
           </div>
           <p className="text-md text-justify lg:text-lg">
-            Senapan Udara Steyr untuk Berburu & Target adalah salah satu Senjata
-            Udara kelas tertinggi yang tersedia di pasar dan merupakan standar
-            Olimpiade. Dengan styre Air Rifles mereka dibuat bagian demi bagian,
-            sekrup demi sekrup, sentuhan demi sentuhan, yang akan memberi
-            pemilik dan penembak masa depan segala yang diperlukan untuk sukses
-            besar, apakah itu yang terbaik pribadi atau rekor dunia! Tak perlu
-            khawatir... Anda bisa yakin akan kualitasnya dengan Steyr Air
-            Rifles. Setelah Anda memegang dan menggunakan styre Air Rifles, Anda
-            akan memahami betapa pentingnya setiap komponen dan penyesuaian
-            idealnya untuk keseluruhan produk. STEYR SPORT mewakili kelas
-            tersendiri dalam hal kualitas pengerjaan.
+            Airgun Indonesia dibuka pada tahun 2017 oleh Travis Scott arya,
+            Airgun Indonesia bergerak dalam bidang jual beli senapan pcp, pelet,
+            Air Pitols, airguns, airsoft, paintball, blank gun, crossbows dan
+            perlengkapan berburu.
           </p>
         </div>
       </Layout>

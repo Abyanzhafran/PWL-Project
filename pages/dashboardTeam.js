@@ -136,7 +136,7 @@ const dashboardTeam = () => {
           {teams
             .filter((x) => x.id == teamId)
             .map((team) => (
-              <div className="flex flex-col gap-4 mt-8" key={team.id}>
+              <div className="flex flex-col gap-4 mt-8">
                 <span className="font-bold text-2xl">Edit Data Tim</span>
                 <input
                   placeholder={team.nama}

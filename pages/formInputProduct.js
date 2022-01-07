@@ -32,37 +32,37 @@ const formInputProduct = () => {
             <a class="btn btn-info btn-sm">Kembali</a>
           </Link>
         </div>
-        <div className="flex flex-col gap-4 mt-8">
+        <div class="flex flex-col gap-4 mt-8">
           <input
             placeholder="Nama"
-            className="input input-bordered"
+            class="input input-bordered"
             type="text"
             onChange={(e) => setInsertProductName(e.target.value)}
           />
 
           <input
             placeholder="Harga"
-            className="input input-bordered"
+            class="input input-bordered"
             type="number"
             onChange={(e) => setInsertProductHarga(e.target.value)}
           />
 
           <input
             placeholder="Stok"
-            className="input input-bordered"
+            class="input input-bordered"
             type="number"
             onChange={(e) => setInsertProductStok(e.target.value)}
           />
 
           <input
             placeholder="Merk"
-            className="input input-bordered"
+            class="input input-bordered"
             type="text"
             onChange={(e) => setInsertProductMerk(e.target.value)}
           />
         </div>
         <div className="mt-4">
-          <button className="btn btn-info" onClick={() => addProduct()}>
+          <button class="btn btn-info" onClick={() => addProduct()}>
             submit
           </button>
         </div>

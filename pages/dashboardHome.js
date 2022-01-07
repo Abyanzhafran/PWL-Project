@@ -35,8 +35,8 @@ const dashboardHome = () => {
         <div className="mb-4">
           <span className="font-bold text-2xl">HOME</span>
         </div>
-        <div className="overflow-x-auto">
-          <table className="table w-full">
+        <div class="overflow-x-auto">
+          <table class="table w-full">
             <thead>
               <tr>
                 <th></th>

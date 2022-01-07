@@ -7,12 +7,11 @@ export default function Footer() {
       <div className="grid grid-flow-col">
         <div className="flex justify-around gap-10">
           <div className="w-1/2 lg:w-1/4 text-lg">
-            <span className="footer-title">About Us</span>
-            <p className="text-justify">
-              Airgun Indonesia dibuka pada tahun 2017 oleh Travis Scott arya,
-              Airgun Indonesia bergerak dalam bidang jual beli senapan pcp,
-              pelet, Air Pitols, airguns, airsoft, paintball, blank gun,
-              crossbows dan perlengkapan berburu.
+            <span className="footer-title">Air Gun Indonesia</span>
+            <p className="text-left">
+              Istana Ps. Baru, <br></br> Jl. Pintu Air Raya No.64, RT.6/RW.1,
+              Ps. Baru, Kecamatan Sawah Besar, Kota Jakarta Pusat, Daerah Khusus
+              Ibukota Jakarta
             </p>
           </div>
           <div className="text-lg xl:text-xl">

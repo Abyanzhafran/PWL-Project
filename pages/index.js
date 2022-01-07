@@ -63,14 +63,19 @@ const homepage = () => {
       </Layout>
       <Layout
         className={`bg-primary-lighter text-secondary-lighter pb-24`}
-        id="team"
+        id={'team'}
       >
         <div className=" text-center font-bold py-10">
           <p className="text-2xl py-5 uppercase">Meet Our Team!</p>
         </div>
         <div className="flex flex-wrap justify-center gap-4">
           {teams.map((team) => (
-            <TeamList name={team.nama} nim={team.nim} work={team.pekerjaan} />
+            <TeamList
+              key={team.id}
+              name={team.nama}
+              nim={team.nim}
+              work={team.pekerjaan}
+            />
           ))}
         </div>
       </Layout>

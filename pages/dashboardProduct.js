@@ -158,7 +158,7 @@ const dashboard_product = () => {
               >
                 Delete
               </label>
-              <label for="my-modal-3" className="btn">
+              <label for="my-modal-3" class="btn">
                 Close
               </label>
             </div>

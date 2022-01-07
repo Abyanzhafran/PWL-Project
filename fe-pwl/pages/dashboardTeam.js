@@ -4,7 +4,7 @@ import LayoutDashboard from '../components/LayoutDashboard';
 import AddIcon from '@mui/icons-material/Add';
 
 const dashboardTeam = () => {
-  const url = 'http://127.0.0.1:8000/api/team';
+  const url = 'https://be-pwl.herokuapp.com/api/team';
   const [teams, setTeams] = useState([]);
   const [teamId, setTeamId] = useState('');
   const [insertTeamName, setInsertTeamName] = useState('');

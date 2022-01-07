@@ -4,7 +4,7 @@ import Card from './Card';
 import steyr_1 from '../public/steyr_1.jpeg';
 
 const ProductList = () => {
-  const url = 'http://127.0.0.1:8000/api/product';
+  const url = 'https://be-pwl.herokuapp.com/api/product';
   const [products, setProducts] = useState([]);
 
   useEffect(() => {

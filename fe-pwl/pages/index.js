@@ -11,7 +11,7 @@ import Layout from '../components/Layout';
 import Head from 'next/head';
 
 const homepage = () => {
-  const url = 'http://127.0.0.1:8000/api/team';
+  const url = 'https://be-pwl.herokuapp.com/api/team';
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
@@ -74,11 +74,8 @@ const homepage = () => {
           ))}
         </div>
       </Layout>
-      <Layout
-        className={`bg-primary-lighter text-secondary-lighter pb-24`}
-        id={'contact'}
-      >
-        <Contact></Contact>
+      <Layout className={`bg-primary-lighter text-secondary-lighter pb-24`}>
+        <Contact id="contact"></Contact>
       </Layout>
       <Footer />
       <FooterLower />

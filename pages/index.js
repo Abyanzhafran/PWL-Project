@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProductList from '../components/ProductList';
+import Contact from '../components/Contact';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
@@ -25,35 +26,34 @@ const homepage = () => {
         <title>Airgun Indonesia</title>
       </Head>
       <Navbar />
-      <Layout className={`bg-primary`}>
+      <Layout className={`bg-primary`} id="top">
         <Hero />
       </Layout>
-      <Layout className={`bg-primary-lighter text-secondary-lighter`}>
-        <div className="pt-10 pb-12">
+      <Layout
+        className={`bg-primary-lighter text-secondary-lighter`}
+        id="about"
+      >
+        <div className="pt-10 pb-12 px-10 lg:px-5">
           <div className="pb-6">
             <span className="font-bold text-4xl text-secondary-lighter">
-              STEYR AIR RIFLES
+              Air Gun Indonesia
             </span>
           </div>
-          <p className="text-lg">
-            Senapan Udara Steyr untuk Berburu & Target adalah salah satu Senjata
-            Udara kelas tertinggi yang tersedia di pasar dan merupakan standar
-            Olimpiade. Dengan styre Air Rifles mereka dibuat bagian demi bagian,
-            sekrup demi sekrup, sentuhan demi sentuhan, yang akan memberi
-            pemilik dan penembak masa depan segala yang diperlukan untuk sukses
-            besar, apakah itu yang terbaik pribadi atau rekor dunia! Tak perlu
-            khawatir... Anda bisa yakin akan kualitasnya dengan Steyr Air
-            Rifles. Setelah Anda memegang dan menggunakan styre Air Rifles, Anda
-            akan memahami betapa pentingnya setiap komponen dan penyesuaian
-            idealnya untuk keseluruhan produk. STEYR SPORT mewakili kelas
-            tersendiri dalam hal kualitas pengerjaan.
+          <p className="text-md text-justify lg:text-lg">
+            Airgun Indonesia dibuka pada tahun 2017 oleh Travis Scott arya,
+            Airgun Indonesia bergerak dalam bidang jual beli senapan pcp, pelet,
+            Air Pitols, airguns, airsoft, paintball, blank gun, crossbows dan
+            perlengkapan berburu.
           </p>
         </div>
       </Layout>
-      <Layout className={`bg-primary-lighter text-secondary-lighter`}>
+      <Layout
+        className={`bg-primary-lighter text-secondary-lighter`}
+        id={'product'}
+      >
         <div className=" text-center font-bold py-10 lg:py-20">
           <p className="text-2xl py-5 uppercase">Daftar Produk Kami</p>
-          <p className="text-md px-10 lg:text-lg">
+          <p className="text-md px-10 lg:px-5 lg:text-lg">
             Berikut beberapa produk pilihan semuanya masih tersedia dengan stok
             yang banyak dan berbagai rentang harga. Beli dan nikmati kualitas
             terbaik.
@@ -61,20 +61,24 @@ const homepage = () => {
         </div>
         <ProductList />
       </Layout>
-      <Layout className={`bg-primary-lighter text-secondary-lighter pb-24`}>
+      <Layout
+        className={`bg-primary-lighter text-secondary-lighter pb-24`}
+        id="team"
+      >
         <div className=" text-center font-bold py-10">
           <p className="text-2xl py-5 uppercase">Meet Our Team!</p>
         </div>
         <div className="flex flex-wrap justify-center gap-4">
           {teams.map((team) => (
-            <TeamList
-              name={team.nama}
-              nim={team.nim}
-              work={team.pekerjaan}
-              key={team.id}
-            />
+            <TeamList name={team.nama} nim={team.nim} work={team.pekerjaan} />
           ))}
         </div>
+      </Layout>
+      <Layout
+        className={`bg-primary-lighter text-secondary-lighter pb-24`}
+        id="contact"
+      >
+        <Contact></Contact>
       </Layout>
       <Footer />
       <FooterLower />

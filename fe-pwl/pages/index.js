@@ -70,7 +70,12 @@ const homepage = () => {
         </div>
         <div className="flex flex-wrap justify-center gap-4">
           {teams.map((team) => (
-            <TeamList name={team.nama} nim={team.nim} work={team.pekerjaan} />
+            <TeamList
+              key={team.id}
+              name={team.nama}
+              nim={team.nim}
+              work={team.pekerjaan}
+            />
           ))}
         </div>
       </Layout>

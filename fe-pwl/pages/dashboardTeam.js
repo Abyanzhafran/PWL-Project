@@ -53,7 +53,7 @@ const dashboardTeam = () => {
           <div className="ml-4">
             <span className="font-bold text-2xl">TEAM</span>
           </div>
-          <label class="btn btn-info btn-sm" for="my-modal-1">
+          <label className="btn btn-info btn-sm" for="my-modal-1">
             <AddIcon />
             Add Team
           </label>
@@ -97,20 +97,20 @@ const dashboardTeam = () => {
         </div>
       </div>
       {/* add modal */}
-      <input type="checkbox" id="my-modal-1" class="modal-toggle" />
+      <input type="checkbox" id="my-modal-1" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
           <div className="flex flex-col gap-4 mt-8">
             <span className="font-bold text-2xl">Input Data Tim</span>
             <input
               placeholder="Nama"
-              class="input input-bordered"
+              className="input input-bordered"
               type="text"
               onChange={(e) => setInsertTeamName(e.target.value)}
             />
             <input
               placeholder="Nim"
-              class="input input-bordered"
+              className="input input-bordered"
               type="text"
               onChange={(e) => setInsertTeamNim(e.target.value)}
             />
@@ -140,13 +140,13 @@ const dashboardTeam = () => {
                 <span className="font-bold text-2xl">Edit Data Tim</span>
                 <input
                   placeholder={team.nama}
-                  class="input input-bordered"
+                  className="input input-bordered"
                   type="text"
                   onChange={(e) => setUpdateTeamName(e.target.value)}
                 />
                 <input
                   placeholder={team.nim}
-                  class="input input-bordered"
+                  className="input input-bordered"
                   type="text"
                   onChange={(e) => setUpdateTeamNim(e.target.value)}
                 />
@@ -167,19 +167,19 @@ const dashboardTeam = () => {
         </div>
       </div>
       {/* delete modal */}
-      <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-      <div class="modal">
-        <div class="modal-box">
+      <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box">
           <span>Sure want to Delete ??</span>
-          <div class="modal-action">
+          <div className="modal-action">
             <label
               for="my-modal-3"
-              class="btn btn-primary"
+              className="btn btn-primary"
               onClick={() => deleteTeam()}
             >
               Delete
             </label>
-            <label for="my-modal-3" class="btn">
+            <label for="my-modal-3" className="btn">
               Close
             </label>
           </div>

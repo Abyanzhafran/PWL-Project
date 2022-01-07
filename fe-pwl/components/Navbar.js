@@ -1,6 +1,6 @@
 import { Link } from 'react-scroll';
 import Ling from 'next/link';
-// import AnchorLink from 'react-anchor-link-smooth-scroll';
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function Navbar() {
   return (
@@ -10,9 +10,6 @@ export default function Navbar() {
       </div>
       <div className="hidden navbar-center lg:flex">
         <div className="flex items-stretch">
-          {/* <Link to={item.url} smooth={true} duration={250}>
-            {item.name}
-          </Link> */}
           <Link to="top" smooth={true} duration={250}>
             <a className="btn btn-ghost btn-md">Home</a>
           </Link>
@@ -44,20 +41,8 @@ export default function Navbar() {
         </div>
         <div className="flex-none">
           <div className="btn-group">
-            <button className="btn btn-square btn-ghost hidden sm:flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                class="inline-block w-6 h-6 stroke-current"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                ></path>
-              </svg>
+            <button className="btn btn-square btn-ghost">
+              <SearchIcon />
             </button>
             <div className="divider divider-vertical"></div>
             <Ling href="/login">

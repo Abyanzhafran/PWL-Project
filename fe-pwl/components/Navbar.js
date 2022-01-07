@@ -1,5 +1,6 @@
-import Link from 'next/link';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { Link } from 'react-scroll';
+import Ling from 'next/link';
+// import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 export default function Navbar() {
   return (
@@ -9,21 +10,24 @@ export default function Navbar() {
       </div>
       <div className="hidden navbar-center lg:flex">
         <div className="flex items-stretch">
-          <AnchorLink href="#top" offset="100">
+          {/* <Link to={item.url} smooth={true} duration={250}>
+            {item.name}
+          </Link> */}
+          <Link to="top" smooth={true} duration={250}>
             <a className="btn btn-ghost btn-md">Home</a>
-          </AnchorLink>
-          <AnchorLink href="#about">
+          </Link>
+          <Link to="about" smooth={true} duration={250}>
             <a className="btn btn-ghost btn-md">About</a>
-          </AnchorLink>
-          <AnchorLink href="#product">
+          </Link>
+          <Link to="product" smooth={true} duration={250}>
             <a className="btn btn-ghost btn-md">Product</a>
-          </AnchorLink>
-          <AnchorLink href="#team">
+          </Link>
+          <Link to="team" smooth={true} duration={250}>
             <a className="btn btn-ghost btn-md">Team</a>
-          </AnchorLink>
-          <AnchorLink href="#contact">
+          </Link>
+          <Link to="contact" smooth={true} duration={250}>
             <a className="btn btn-ghost btn-md">Contact</a>
-          </AnchorLink>
+          </Link>
         </div>
       </div>
       <div className="navbar-end">
@@ -56,9 +60,9 @@ export default function Navbar() {
               </svg>
             </button>
             <div className="divider divider-vertical"></div>
-            <Link href="/login">
+            <Ling href="/login">
               <button className="btn btn-ghost">Login Team</button>
-            </Link>
+            </Ling>
           </div>
         </div>
       </div>

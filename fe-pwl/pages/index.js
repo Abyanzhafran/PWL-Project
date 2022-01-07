@@ -26,12 +26,12 @@ const homepage = () => {
         <title>Airgun Indonesia</title>
       </Head>
       <Navbar />
-      <Layout className={`bg-primary`} id={'top'}>
+      <Layout className={`bg-primary`} id="top">
         <Hero />
       </Layout>
       <Layout
         className={`bg-primary-lighter text-secondary-lighter`}
-        id={'about'}
+        id="about"
       >
         <div className="pt-10 pb-12 px-10 lg:px-5">
           <div className="pb-6">
@@ -74,8 +74,11 @@ const homepage = () => {
           ))}
         </div>
       </Layout>
-      <Layout className={`bg-primary-lighter text-secondary-lighter pb-24`}>
-        <Contact id="contact"></Contact>
+      <Layout
+        className={`bg-primary-lighter text-secondary-lighter pb-24`}
+        id="contact"
+      >
+        <Contact></Contact>
       </Layout>
       <Footer />
       <FooterLower />

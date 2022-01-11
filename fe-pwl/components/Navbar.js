@@ -9,21 +9,21 @@ export default function Navbar() {
         <span className="text-lg">AirGun</span>
       </div>
       <div className="hidden navbar-center lg:flex">
-        <div className="flex items-stretch">
+        <div className="flex items-center">
           <Link to="top" smooth={true} duration={250}>
-            <a className="btn btn-ghost btn-md">Home</a>
+            <a className="btn btn-ghost btn-sm">Home</a>
           </Link>
           <Link to="about" smooth={true} duration={250}>
-            <a className="btn btn-ghost btn-md">About</a>
+            <a className="btn btn-ghost btn-sm">About</a>
           </Link>
           <Link to="product" smooth={true} duration={250}>
-            <a className="btn btn-ghost btn-md">Product</a>
+            <a className="btn btn-ghost btn-sm">Product</a>
           </Link>
           <Link to="team" smooth={true} duration={250}>
-            <a className="btn btn-ghost btn-md">Team</a>
+            <a className="btn btn-ghost btn-sm">Team</a>
           </Link>
           <Link to="contact" smooth={true} duration={250}>
-            <a className="btn btn-ghost btn-md">Contact</a>
+            <a className="btn btn-ghost btn-sm">Contact</a>
           </Link>
         </div>
       </div>

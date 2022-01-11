@@ -4,11 +4,12 @@ import LayoutDashboard from '../components/LayoutDashboard';
 import AddIcon from '@mui/icons-material/Add';
 
 const dashboardTeam = () => {
-  const url = 'https://be-pwl.herokuapp.com/api/team';
+  const url = 'http://127.0.0.1:8000/api/team';
   const [teams, setTeams] = useState([]);
   const [teamId, setTeamId] = useState('');
   const [insertTeamName, setInsertTeamName] = useState('');
   const [insertTeamNim, setInsertTeamNim] = useState('');
+  const [insertTeamPekerjaan, setInsertTeamPekerjaan] = useState('');
   const [updateTeamName, setUpdateTeamName] = useState('');
   const [updateTeamNim, setUpdateTeamNim] = useState('');
 
@@ -23,6 +24,7 @@ const dashboardTeam = () => {
       .post(url, {
         nama: insertTeamName,
         nim: insertTeamNim,
+        pekerjaan: insertTeamPekerjaan,
       })
       .then(() => {
         alert('Team Added');
@@ -113,6 +115,12 @@ const dashboardTeam = () => {
               className="input input-bordered"
               type="text"
               onChange={(e) => setInsertTeamNim(e.target.value)}
+            />
+            <input
+              placeholder="Pekerjaan"
+              className="input input-bordered"
+              type="text"
+              onChange={(e) => setInsertTeamPekerjaan(e.target.value)}
             />
           </div>
           <div className="modal-action">

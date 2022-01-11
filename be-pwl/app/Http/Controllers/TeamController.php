@@ -54,6 +54,7 @@ class TeamController extends Controller
         $tbl_team = new Team;
         $tbl_team->nama = $request->nama;
         $tbl_team->nim = $request->nim;
+        $tbl_team->pekerjaan = $request->pekerjaan;
         $tbl_team->save();
         return response()->json($request);
     }
@@ -92,6 +93,7 @@ class TeamController extends Controller
         $tbl_team = Team::findOrFail($id);
         $tbl_team->nama = $request->nama;
         $tbl_team->nim = $request->nim;
+        $tbl_team->pekerjaan = $request->pekerjaan;
         $tbl_team->save();
         return response()->json($request);
     }

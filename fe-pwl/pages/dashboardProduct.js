@@ -5,7 +5,7 @@ import LayoutDashboard from '../components/LayoutDashboard';
 import AddIcon from '@mui/icons-material/Add';
 
 const dashboard_product = () => {
-  const url = 'https://be-pwl.herokuapp.com/api/product';
+  const url = 'http://127.0.0.1:8000/api/product';
   const [products, setProducts] = useState([]);
   const [ProductId, setProductId] = useState('');
   const [updateProductName, setUpdateProductName] = useState('');

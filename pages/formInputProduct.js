@@ -4,7 +4,7 @@ import axios from 'axios';
 import LayoutDashboard from '../components/LayoutDashboard';
 
 const formInputProduct = () => {
-  const url = 'http://127.0.0.1:8000/api/product';
+  const url = 'https://be-pwl.herokuapp.com/api/product';
   const [insertProductName, setInsertProductName] = useState('');
   const [insertProductHarga, setInsertProductHarga] = useState('');
   const [insertProductStok, setInsertProductStok] = useState('');

@@ -18,6 +18,7 @@ const ProductList = () => {
       <div className="flex flex-wrap justify-center gap-6">
         {products.map((item) => (
           <Card
+            key={item.id}
             cardImage={steyr_1}
             head={item.nama_produk}
             price={item.harga}

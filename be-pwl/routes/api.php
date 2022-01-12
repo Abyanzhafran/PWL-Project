@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,5 @@ Route::post('team/{nama}', [TeamController::class, 'login']);
 Route::resource('product', ProductController::class)->except(['create', 'edit']);
 
 Route::resource('team', TeamController::class)->except(['create', 'edit']);
+
+Route::apiResource('admin', AdminController::class);

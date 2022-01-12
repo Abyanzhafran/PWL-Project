@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const SignIn = () => {
-  const url = 'http://127.0.0.1:8000/api/team';
+  const url = 'http://127.0.0.1:8000/api/admin';
   const [field, setField] = useState([]);
-  const [name, setName] = useState('');
-  const [nimm, setNim] = useState('');
+  const [user, setUser] = useState('');
+  const [pass, setPass] = useState('');
 
   useEffect(() => {
     axios.get(url).then((res) => {
@@ -13,10 +13,12 @@ const SignIn = () => {
     });
   }, []);
 
+  console.log(field);
+
   const auth = () => {
     if (
-      field.map((x) => x.nama == name).includes(true) &&
-      field.map((x) => x.nim == nimm).includes(true)
+      field.map((x) => x.username == user).includes(true) &&
+      field.map((x) => x.password == pass).includes(true)
     ) {
       alert('silahkan masuk lurr');
       window.location.href = 'http://localhost:3001/dashboardHome';
@@ -39,17 +41,17 @@ const SignIn = () => {
             <input
               type="text"
               className="input input-ghost shadow-md"
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setUser(e.target.value)}
             />
             <label className="label">
               <label htmlFor="Password" className="label-text">
-                Nim
+                Password
               </label>
             </label>
             <input
               type="password"
               className="input input-ghost shadow-md"
-              onChange={(e) => setNim(e.target.value)}
+              onChange={(e) => setPass(e.target.value)}
             />
           </div>
           <button

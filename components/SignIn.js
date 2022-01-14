@@ -21,7 +21,8 @@ const SignIn = () => {
       field.map((x) => x.password == pass).includes(true)
     ) {
       alert('silahkan masuk lurr');
-      window.location.href = 'https://www.show-case.xyz/dashboardHome';
+      window.location.href =
+        'https://airgun-abyanzhafran.vercel.app/dashboardHome';
     } else {
       alert('nama atau nim tidak terdaftar lurr');
     }

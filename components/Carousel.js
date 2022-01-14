@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import img1 from '../public/images/hero/1.jpg';
-import img2 from '../public/images/hero/2.jpg';
-import img3 from '../public/images/hero/3.jpg';
+import img2 from '../public/images/hero/2.jpeg';
+import img3 from '../public/images/hero/3.jpeg';
 export default function Carousel() {
   return (
     <div className="flex-col">

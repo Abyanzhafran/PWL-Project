@@ -5,7 +5,7 @@ import LayoutDashboard from '../components/LayoutDashboard';
 import AddIcon from '@mui/icons-material/Add';
 
 const dashboard_product = () => {
-  const url = 'https://be-pwl.herokuapp.com/api/product';
+  const url = 'http://127.0.0.1:8000/api/product';
   const [products, setProducts] = useState([]);
   const [ProductId, setProductId] = useState('');
   const [updateProductName, setUpdateProductName] = useState('');
@@ -46,14 +46,14 @@ const dashboard_product = () => {
             <span className="font-bold text-2xl">PRODUCT</span>
           </div>
           <Link href="/formInputProduct">
-            <a class="btn btn-info btn-sm">
+            <a className="btn btn-info btn-sm">
               <AddIcon />
               Add Product
             </a>
           </Link>
         </div>
-        <div class="overflow-x-auto mt-10">
-          <table class="table w-full">
+        <div className="overflow-x-auto mt-10">
+          <table className="table w-full">
             <thead>
               <tr>
                 <th>ID_Produk</th>
@@ -74,14 +74,14 @@ const dashboard_product = () => {
                   <td>{prod.merk_barang}</td>
                   <td className="flex gap-1">
                     <label
-                      class="btn btn-xs btn-success modal-button"
+                      className="btn btn-xs btn-success modal-button"
                       for="my-modal-2"
                       onClick={() => setProductId(prod.id)}
                     >
                       Edit
                     </label>
                     <label
-                      class="btn btn-xs btn-error"
+                      className="btn btn-xs btn-error"
                       for="my-modal-3"
                       onClick={() => setProductId(prod.id)}
                     >
@@ -94,7 +94,7 @@ const dashboard_product = () => {
           </table>
         </div>
         {/* update modal */}
-        <input type="checkbox" id="my-modal-2" class="modal-toggle" />
+        <input type="checkbox" id="my-modal-2" className="modal-toggle" />
         <div className="modal overflow-y-auto">
           <div className="modal-box">
             {products
@@ -104,28 +104,28 @@ const dashboard_product = () => {
                   <span>{ProductId}</span>
                   <input
                     placeholder={prod.nama_produk}
-                    class="input input-bordered"
+                    className="input input-bordered"
                     type="text"
                     onChange={(e) => setUpdateProductName(e.target.value)}
                   />
 
                   <input
                     placeholder={prod.harga}
-                    class="input input-bordered"
+                    className="input input-bordered"
                     type="number"
                     onChange={(e) => setUpdateProductHarga(e.target.value)}
                   />
 
                   <input
                     placeholder={prod.stok_barang}
-                    class="input input-bordered"
+                    className="input input-bordered"
                     type="number"
                     onChange={(e) => setUpdateProductStok(e.target.value)}
                   />
 
                   <input
                     placeholder={prod.merk_barang}
-                    class="input input-bordered"
+                    className="input input-bordered"
                     type="text"
                     onChange={(e) => setUpdateProductMerk(e.target.value)}
                   />
@@ -146,14 +146,14 @@ const dashboard_product = () => {
           </div>
         </div>
         {/* delete modal */}
-        <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-        <div class="modal">
-          <div class="modal-box">
+        <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+        <div className="modal">
+          <div className="modal-box">
             <span>Sure want to Delete ??</span>
-            <div class="modal-action">
+            <div className="modal-action">
               <label
                 for="my-modal-3"
-                class="btn btn-primary"
+                className="btn btn-primary"
                 onClick={() => deleteProduct()}
               >
                 Delete

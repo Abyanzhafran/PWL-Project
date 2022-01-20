@@ -19,20 +19,6 @@ class TeamController extends Controller
         return response()->json($tbl_team);
     }
 
-    public function login(Request $request, $nama)
-    {
-        $fields = $request->validate([
-            'nama' => 'required|string'
-        ]);
-
-        $tbl_team = Team::where('nama', $fields['nama'])->first();
-        $response = [
-            'nama' => $tbl_team
-        ];
-
-        return response($response, 201);
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -54,6 +40,7 @@ class TeamController extends Controller
         $tbl_team = new Team;
         $tbl_team->nama = $request->nama;
         $tbl_team->nim = $request->nim;
+        $tbl_team->pekerjaan = $request->pekerjaan;
         $tbl_team->save();
         return response()->json($request);
     }
@@ -92,6 +79,7 @@ class TeamController extends Controller
         $tbl_team = Team::findOrFail($id);
         $tbl_team->nama = $request->nama;
         $tbl_team->nim = $request->nim;
+        $tbl_team->pekerjaan = $request->pekerjaan;
         $tbl_team->save();
         return response()->json($request);
     }

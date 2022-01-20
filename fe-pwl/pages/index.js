@@ -11,7 +11,7 @@ import Layout from '../components/Layout';
 import Head from 'next/head';
 
 const homepage = () => {
-  const url = 'https://be-pwl.herokuapp.com/api/team';
+  const url = 'http://127.0.0.1:8000/api/team';
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
@@ -70,7 +70,12 @@ const homepage = () => {
         </div>
         <div className="flex flex-wrap justify-center gap-4">
           {teams.map((team) => (
-            <TeamList name={team.nama} nim={team.nim} work={team.pekerjaan} />
+            <TeamList
+              key={team.id}
+              name={team.nama}
+              nim={team.nim}
+              work={team.pekerjaan}
+            />
           ))}
         </div>
       </Layout>

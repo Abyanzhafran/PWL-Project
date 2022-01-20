@@ -28,7 +28,7 @@ export default function Navbar() {
         </div>
       </div>
       <div className="navbar-end">
-        <div className="flex-1 hidden sm:flex lg:flex-none">
+        <div className="flex-1 hidden xl:flex xl:flex-none">
           <div className="form-control">
             <input
               type="text"
@@ -41,7 +41,7 @@ export default function Navbar() {
         </div>
         <div className="flex-none">
           <div className="btn-group">
-            <button className="btn btn-square btn-ghost">
+            <button className="btn btn-square btn-ghost hidden xl:flex xl:flex-none">
               <SearchIcon />
             </button>
             <div className="divider divider-vertical"></div>

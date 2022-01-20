@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jan 2022 pada 13.16
--- Versi server: 10.4.22-MariaDB
--- Versi PHP: 7.3.33
+-- Host: localhost
+-- Waktu pembuatan: 20 Jan 2022 pada 09.55
+-- Versi server: 8.0.13-4
+-- Versi PHP: 7.2.24-0ubuntu0.18.04.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,8 +19,32 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pwl-db`
+-- Database: `VjaSxwmcXc`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `administrasi`
+--
+
+CREATE TABLE `administrasi` (
+  `id_admin` int(11) NOT NULL,
+  `username` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `password` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `administrasi`
+--
+
+INSERT INTO `administrasi` (`id_admin`, `username`, `password`) VALUES
+(1, 'zhafran', 'zhafran123'),
+(2, 'bilal', 'baylel123'),
+(3, 'galang', 'galang123'),
+(4, 'tegar', 'tegar123'),
+(5, 'erwin', 'erwin123'),
+(6, 'fanni', 'fanni123');
 
 -- --------------------------------------------------------
 
@@ -83,22 +108,23 @@ CREATE TABLE `produk` (
   `harga` int(11) NOT NULL,
   `stok_barang` int(11) NOT NULL,
   `merk_barang` varchar(100) NOT NULL,
-  `link_gambar` text DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp()
+  `link_gambar` text,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `produk`
 --
 
-INSERT INTO `produk` (`id`, `nama_produk`, `id_kategori`, `harga`, `stok_barang`, `merk_barang`, `link_gambar`, `created_at`, `updated_at`) VALUES
-(1, 'Pistol Angin PCP Model Feinwerkbau Model P11', 1, 23000000, 23, 'Feinwerkbau', '', NULL, NULL),
-(2, 'Pistol Angin PCP Feinwerkbau P8X Import', 1, 29000000, 33, 'Feinwerkbau', '', NULL, NULL),
-(3, 'FEINWERKBAU Pistol Match PCP P8 X', 1, 29800000, 14, 'Feinwerkbau', '', NULL, NULL),
-(4, 'Steyr LG110 High Power Black QF', 2, 25900000, 30, 'steyr', '', NULL, NULL),
-(5, 'Senapan Angin PCP STEYR STEYR CHALLENGE FIELD TARGET', 2, 34900000, 20, 'steyr', '', NULL, NULL),
-(16, 'Steyr LG110 High Power Black QF', NULL, 1200, 14, 'steyr', NULL, '2021-12-29 06:39:52', '2021-12-29 06:39:52');
+INSERT INTO `produk` (`id`, `nama_produk`, `id_kategori`, `harga`, `stok_barang`, `merk_barang`, `link_gambar`) VALUES
+(1, 'Pistol Angin PCP Model Feinwerkbau Model P11', 1, 23000000, 23, 'Feinwerkbau', ''),
+(2, 'Pistol Angin PCP Feinwerkbau P8X Import', 1, 29000000, 33, 'Feinwerkbau', ''),
+(3, 'FEINWERKBAU Pistol Match PCP P8 X', 1, 29800000, 14, 'Feinwerkbau', ''),
+(4, 'Steyr LG110 High Power Black QF', 2, 25900000, 30, 'steyr', ''),
+(5, 'Senapan Angin PCP STEYR STEYR CHALLENGE FIELD TARGET', 2, 34900000, 20, 'steyr', ''),
+(17, 'pistol', NULL, 1130000, 13, 'LG', NULL),
+(18, 'AK-47 with silencer', NULL, 13000000, 11, 'steyr', NULL);
 
 -- --------------------------------------------------------
 
@@ -111,26 +137,30 @@ CREATE TABLE `tim` (
   `nama` varchar(255) NOT NULL,
   `nim` varchar(255) NOT NULL,
   `pekerjaan` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data untuk tabel `tim`
 --
 
-INSERT INTO `tim` (`id`, `nama`, `nim`, `pekerjaan`, `created_at`, `updated_at`) VALUES
-(1, 'Ignatius Tegar S', '19.11.3298', 'UI/UX Designer', '2021-12-26 10:38:43', '2021-12-26 10:38:43'),
-(2, 'Bilal Muhtasyimbilah', '19.11.3272', 'UI/UX Designer', '2021-12-26 10:38:43', '2021-12-26 10:38:43'),
-(3, 'M. Abyan Zhafran D', '19.11.3252', 'Backend Developer', '2021-12-26 10:38:43', '2021-12-26 10:38:43'),
-(4, 'Fanni Fadhila', '19.11.3300', 'Frontend Developer', '2021-12-26 10:38:43', '2021-12-26 10:38:43'),
-(5, 'Christian Erwin Nugroho', '19.11', 'Database Designer', '2021-12-26 10:38:43', '2021-12-26 10:38:43'),
-(6, 'Galang Dika', '19.111.32', 'Database Designer', '2021-12-26 10:38:43', '2021-12-26 03:42:18'),
-(7, 'bambang', '19', '', '2021-12-26 03:43:48', '2021-12-26 03:43:48');
+INSERT INTO `tim` (`id`, `nama`, `nim`, `pekerjaan`) VALUES
+(1, 'Ignatius Tegar S', '19.11.3298', 'UI/UX Designer'),
+(2, 'Bilal Muhtasyimbilah', '19.11.3272', 'UI/UX Designer'),
+(3, 'zhafran juplek', '2311', 'Backend Developer'),
+(4, 'Fanni Fadhila', '19.11.3300', 'Frontend Developer'),
+(5, 'Christian Erwin Nugroho', '19.11', 'Database Designer');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `administrasi`
+--
+ALTER TABLE `administrasi`
+  ADD PRIMARY KEY (`id_admin`);
 
 --
 -- Indeks untuk tabel `customer`
@@ -170,6 +200,12 @@ ALTER TABLE `tim`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `administrasi`
+--
+ALTER TABLE `administrasi`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3301;
+
+--
 -- AUTO_INCREMENT untuk tabel `customer`
 --
 ALTER TABLE `customer`
@@ -191,13 +227,13 @@ ALTER TABLE `pembayaran`
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `tim`
 --
 ALTER TABLE `tim`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

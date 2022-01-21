@@ -15,3 +15,9 @@ cd be-pwl
 #atau
 cd fe-pwl
 ```
+
+## User-Password Admin
+| username | password  |
+| ------   | --------- |
+|  erwin   |  erwin123 |
+|  bilal   | baylel123 |

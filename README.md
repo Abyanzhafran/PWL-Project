@@ -16,6 +16,9 @@ cd be-pwl
 cd fe-pwl
 ```
 
+## NOTES
+Jika data tidak ke-fetch refresh lagi...!
+
 ## User-Password Admin
 | username | password  |
 | ------   | --------- |
